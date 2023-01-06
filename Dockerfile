@@ -19,11 +19,12 @@ RUN mvn --version
 
 RUN mkdir -p /config/apps && \
     mkdir -p /sharedlibs && \
-    cp ./daytrader-ee7/src/main/liberty/config/server.xml /config && \
-    cp ./daytrader-ee7/target/daytrader-ee7.ear /config/apps/ && \
-    if [ ! -z "$(ls ./daytrader-ee7/src/main/liberty/resources)" ]; then \
-        cp ./daytrader-ee7/src/main/liberty/resources/* /sharedlibs; \
+    cp ./src/main/liberty/config/server.xml /config && \
+    cp ./target/*.*ar /config/apps/ && \
+    if [ ! -z "$(ls ./src/main/liberty/lib)" ]; then \
+        cp ./src/main/liberty/lib/* /sharedlibs; \
     fi
+
 
 FROM icr.io/appcafe/websphere-liberty:kernel-java8-ibmjava-ubi
 
