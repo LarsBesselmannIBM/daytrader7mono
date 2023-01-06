@@ -14,8 +14,8 @@ COPY . .
 #RUN mvn dependency:resolve
 #RUN mvn package
 
-RUN mvn clean
-RUN mvn install
+# RUN mvn clean
+# RUN mvn install
 
 
 
