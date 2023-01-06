@@ -30,10 +30,10 @@
 
   <jdbcDriver id="DB2JCC" libraryRef="DB2JCCLib" />
   <library id="DB2JCCLib" filesetRef="DB2JCCFileset" />
-  <fileset id="DB2JCCFileset" dir="${shared.resource.dir}/db2jars" includes="db2jcc4.jar" />
 <!--
-  <fileset id="DB2JCCFileset" dir="{shared.config.dir}/lib/global" includes="db2jcc4.jar" />
+  <fileset id="DB2JCCFileset" dir="${shared.resource.dir}/db2jars" includes="db2jcc4.jar" />
 -->
+  <fileset id="DB2JCCFileset" dir="{shared.config.dir}/lib/global" includes="db2jcc4.jar" />
 
   <authData id="TradeDataSourceAuthData" user="${tradedb_user}" password="${tradedb_password}" />
   <authData id="TradeAdminAuthData" user="${tradedb_user}" password="${tradedb_password}" />
