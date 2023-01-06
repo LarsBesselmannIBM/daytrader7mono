@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: daytrader21
+  name: daytrader21
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: daytrader21
+  template:
+    metadata:
+      labels:
+        app: daytrader21
+      annotations:
+        cloudpakName: "IBM WebSphere Hybrid Edition"
+        cloudpakId: "6358611af04743f99f42dadcd6e39d52"
+        productCloudpakRatio: "4:1"
+        productID: "e7daacc46bbe4e2dacd2af49145a4723"
+        productName: "IBM WebSphere Application Server"
+        productMetric: "VIRTUAL_PROCESSOR_CORE"
+        productChargedContainers: "All"
+
+    spec:
+      containers:
+        - image: image-registry.openshift-image-registry.svc:5000/daytrader-twas/daytrader2twas:latest
+          imagePullPolicy: Always
+          name: daytrader21
+          ports:
+            - containerPort: 9080
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 2000m 
+              memory: 1024Mi 
+            requests:
+              cpu: 1000m 
+              memory: 512Mi
+          env:
+            - name: INSTANA_SERVICE_NAME
+              value: "Daytrader2twas-OCP"
+
+      hostAliases: 
+        - hostnames: 
+          - rhel7was2
+          - rhel7was2.tec.uk.ibm.com
+          ip: 192.168.1.111
+
+
