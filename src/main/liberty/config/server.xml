@@ -28,12 +28,12 @@
 
   <connectionManager agedTimeout="-1" connectionTimeout="0" id="conMgr1" maxIdleTime="-1" maxPoolSize="100" minPoolSize="100" purgePolicy="FailingConnectionOnly" reapTime="-1" />
 
-  <jdbcDriver id="DB2JCC" libraryRef="DB2JCCLib" />
-  <library id="DB2JCCLib" filesetRef="DB2JCCFileset" />
-<!--
-  <fileset id="DB2JCCFileset" dir="${shared.resource.dir}/db2jars" includes="db2jcc4.jar" />
--->
-  <fileset id="DB2JCCFileset" dir="{shared.config.dir}/lib/global" includes="db2jcc4.jar" />
+
+  <jdbcDriver id="DB2_Universal_JDBC_Driver_Provider_Only">
+        <library>
+            <file name="${shared.config.dir}/lib/global/db2jcc4.jar"/>
+        </library>
+    </jdbcDriver>
 
   <authData id="TradeDataSourceAuthData" user="${tradedb_user}" password="${tradedb_password}" />
   <authData id="TradeAdminAuthData" user="${tradedb_user}" password="${tradedb_password}" />
