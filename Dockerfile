@@ -16,7 +16,7 @@ COPY . .
 
 # Disable maven processes to avoid error
 # RUN mvn clean
-# RUN mvn install
+RUN mvn install
 
 
 
