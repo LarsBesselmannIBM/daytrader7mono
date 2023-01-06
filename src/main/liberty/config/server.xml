@@ -38,7 +38,7 @@
   <authData id="TradeDataSourceAuthData" user="${tradedb_user}" password="${tradedb_password}" />
   <authData id="TradeAdminAuthData" user="${tradedb_user}" password="${tradedb_password}" />
 
-  <dataSource jndiName="jdbc/TradeDataSource" jdbcDriverRef="DB2JCC" id="DefaultDataSource" connectionManagerRef="conMgr1" statementCacheSize="60" isolationLevel="TRANSACTION_READ_COMMITTED" type="javax.sql.ConnectionPoolDataSource">
+  <dataSource jndiName="jdbc/TradeDataSource" jdbcDriverRef="DB2_Universal_JDBC_Driver_Provider_Only" id="DefaultDataSource" connectionManagerRef="conMgr1" statementCacheSize="60" isolationLevel="TRANSACTION_READ_COMMITTED" type="javax.sql.ConnectionPoolDataSource">
     <properties serverName="${tradedb_host}" portNumber="${tradedb_port}" databaseName="${tradedb_name}" driverType="4" user="${tradedb_user}" password="${tradedb_password}" />
   </dataSource>
 
