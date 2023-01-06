@@ -14,6 +14,7 @@ COPY . .
 #RUN mvn dependency:resolve
 #RUN mvn package
 
+# Disable maven processes to avoid error
 # RUN mvn clean
 # RUN mvn install
 
