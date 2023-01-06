@@ -5,7 +5,7 @@
 ########################################
 # Build Image
 ########################################
-FROM maven:3.6-jdk-8-slim as build
+FROM docker.io/maven:3.6-jdk-8-slim as build
 
 WORKDIR /app
 COPY . .
