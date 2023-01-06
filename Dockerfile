@@ -5,7 +5,8 @@
 ########################################
 # Build Image
 ########################################
-FROM docker.io/maven:3.6-jdk-8-slim as build
+# FROM docker.io/maven:3.6-jdk-8-slim as build
+FROM docker.io/maven:33.8.7-eclipse-temurin-8 as build
 
 WORKDIR /app
 COPY . .
